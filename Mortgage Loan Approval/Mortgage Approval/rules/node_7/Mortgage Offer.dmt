@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ilog.rules.studio.model.dt:DecisionTable xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.dt="http://ilog.rules.studio/model/dt.ecore">
-  <name>Determine mortgage offer</name>
-  <uuid>24c4f95c-9308-468b-802b-dc637174863c</uuid>
+  <name>Mortgage Offer</name>
+  <uuid>df5d2dea-0cca-4f65-805f-4f59017fe99e</uuid>
   <locale>en_US</locale>
   <definition><DT xmlns="http://schemas.ilog.com/Rules/7.0/DecisionTable" Version="7.0">
     <Body>
@@ -13,19 +13,19 @@
             <ConditionDefinitions>
                 <ConditionDefinition Id="C0">
                     <ExpressionDefinition>
-                        <Text><![CDATA['Determine Applicant Financial Risk' is <a string>]]></Text>
+                        <Text><![CDATA['Determine Applicant Financial Risk' is <an Applicant Financial Risk>]]></Text>
                     </ExpressionDefinition>
                 </ConditionDefinition>
                 <ConditionDefinition Id="C1">
                     <ExpressionDefinition>
-                        <Text><![CDATA['Determine Mortgage Risk' is <a string>]]></Text>
+                        <Text><![CDATA['Determine Mortgage Risk' is <a Mortgage Risk>]]></Text>
                     </ExpressionDefinition>
                 </ConditionDefinition>
             </ConditionDefinitions>
             <ActionDefinitions>
                 <ActionDefinition Id="A0">
                     <ExpressionDefinition>
-                        <Text><![CDATA[set decision to <a string>]]></Text>
+                        <Text><![CDATA[set 'decision' to <a Mortgage Offer> ]]></Text>
                     </ExpressionDefinition>
                 </ActionDefinition>
             </ActionDefinitions>
@@ -34,41 +34,41 @@
             <Partition DefId="C0">
                 <Condition>
                     <Expression>
-                        <Param><![CDATA["High Financial Risk"]]></Param>
+                        <Param><![CDATA[High Financial Risk]]></Param>
                     </Expression>
                     <Partition DefId="C1">
                         <Condition>
                             <Expression>
-                                <Param><![CDATA["High Mortgage Risk"]]></Param>
+                                <Param><![CDATA[High Mortgage Risk]]></Param>
                             </Expression>
                             <ActionSet>
                                 <Action DefId="A0">
                                     <Expression>
-                                        <Param><![CDATA["No Mortgage"]]></Param>
+                                        <Param><![CDATA[No Mortgage]]></Param>
                                     </Expression>
                                 </Action>
                             </ActionSet>
                         </Condition>
                         <Condition>
                             <Expression>
-                                <Param><![CDATA["Medium Mortgage Risk"]]></Param>
+                                <Param><![CDATA[Medium Mortgage Risk]]></Param>
                             </Expression>
                             <ActionSet>
                                 <Action DefId="A0">
                                     <Expression>
-                                        <Param><![CDATA["No Mortgage"]]></Param>
+                                        <Param><![CDATA[No Mortgage]]></Param>
                                     </Expression>
                                 </Action>
                             </ActionSet>
                         </Condition>
                         <Condition>
                             <Expression>
-                                <Param><![CDATA["Low Mortgage Risk"]]></Param>
+                                <Param><![CDATA[Low Mortgage Risk]]></Param>
                             </Expression>
                             <ActionSet>
                                 <Action DefId="A0">
                                     <Expression>
-                                        <Param><![CDATA["Expensive Mortgage"]]></Param>
+                                        <Param><![CDATA[Expensive Mortgage]]></Param>
                                     </Expression>
                                 </Action>
                             </ActionSet>
@@ -77,41 +77,41 @@
                 </Condition>
                 <Condition>
                     <Expression>
-                        <Param><![CDATA["Low Financial Risk"]]></Param>
+                        <Param><![CDATA[Medium Financial Risk]]></Param>
                     </Expression>
                     <Partition DefId="C1">
                         <Condition>
                             <Expression>
-                                <Param><![CDATA["High Mortgage Risk"]]></Param>
+                                <Param><![CDATA[High Mortgage Risk]]></Param>
                             </Expression>
                             <ActionSet>
                                 <Action DefId="A0">
                                     <Expression>
-                                        <Param><![CDATA["Expensive Mortgage"]]></Param>
+                                        <Param><![CDATA[Expensive Mortgage]]></Param>
                                     </Expression>
                                 </Action>
                             </ActionSet>
                         </Condition>
                         <Condition>
                             <Expression>
-                                <Param><![CDATA["Medium Mortgage Risk"]]></Param>
+                                <Param><![CDATA[Medium Mortgage Risk]]></Param>
                             </Expression>
                             <ActionSet>
                                 <Action DefId="A0">
                                     <Expression>
-                                        <Param><![CDATA["Medium Mortgage"]]></Param>
+                                        <Param><![CDATA[Medium Mortgage]]></Param>
                                     </Expression>
                                 </Action>
                             </ActionSet>
                         </Condition>
                         <Condition>
                             <Expression>
-                                <Param><![CDATA["Low Mortgage Risk"]]></Param>
+                                <Param><![CDATA[Low Mortgage Risk]]></Param>
                             </Expression>
                             <ActionSet>
                                 <Action DefId="A0">
                                     <Expression>
-                                        <Param><![CDATA["Cheap Mortgage"]]></Param>
+                                        <Param><![CDATA[Cheap Mortgage]]></Param>
                                     </Expression>
                                 </Action>
                             </ActionSet>
@@ -120,41 +120,41 @@
                 </Condition>
                 <Condition>
                     <Expression>
-                        <Param><![CDATA["Medium Financial Risk"]]></Param>
+                        <Param><![CDATA[Low Financial Risk]]></Param>
                     </Expression>
                     <Partition DefId="C1">
                         <Condition>
                             <Expression>
-                                <Param><![CDATA["High Mortgage Risk"]]></Param>
+                                <Param><![CDATA[High Mortgage Risk]]></Param>
                             </Expression>
                             <ActionSet>
                                 <Action DefId="A0">
                                     <Expression>
-                                        <Param><![CDATA["No Mortgage"]]></Param>
+                                        <Param><![CDATA[No Mortgage]]></Param>
                                     </Expression>
                                 </Action>
                             </ActionSet>
                         </Condition>
                         <Condition>
                             <Expression>
-                                <Param><![CDATA["Medium Mortgage Risk"]]></Param>
+                                <Param><![CDATA[Medium Mortgage Risk]]></Param>
                             </Expression>
                             <ActionSet>
                                 <Action DefId="A0">
                                     <Expression>
-                                        <Param><![CDATA["Expensive Mortgage"]]></Param>
+                                        <Param><![CDATA[Expensive Mortgage]]></Param>
                                     </Expression>
                                 </Action>
                             </ActionSet>
                         </Condition>
                         <Condition>
                             <Expression>
-                                <Param><![CDATA["Low Mortgage Risk"]]></Param>
+                                <Param><![CDATA[Low Mortgage Risk]]></Param>
                             </Expression>
                             <ActionSet>
                                 <Action DefId="A0">
                                     <Expression>
-                                        <Param><![CDATA["Medium Mortgage"]]></Param>
+                                        <Param><![CDATA[Medium Mortgage]]></Param>
                                     </Expression>
                                 </Action>
                             </ActionSet>
@@ -172,6 +172,7 @@
         <ResourceSet Locale="en_US">
             <Data Name="Definitions(C0)#HeaderText"><![CDATA[Determine Applicant Financial Risk]]></Data>
             <Data Name="Definitions(C1)#HeaderText"><![CDATA[Determine Mortgage Risk]]></Data>
+            <Data Name="Definitions(A0)[0]#HeaderText"><![CDATA[a string]]></Data>
             <Data Name="Definitions(A0)#HeaderText"><![CDATA[Determine Mortgage Offer]]></Data>
         </ResourceSet>
     </Resources>

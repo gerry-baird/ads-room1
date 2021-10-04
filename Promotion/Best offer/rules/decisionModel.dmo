@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionmodel:DecisionModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionmodel="http://com.ibm.rules.studio/model/decisionmodel.ecore">
+  <name>decisionModel</name>
+  <uuid>aee5ed77-733b-49bf-b41c-9cd9056a31e8</uuid>
+  <locale>en_US</locale>
+  <definition><definitions xmlns="http://www.omg.org/spec/DMN/20180521/MODEL/" id="decisions" name="diagram" namespace="">
+    <extensionElements>
+        <locale xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" id="en_US"/>
+    </extensionElements>
+    <inputData id="node_0" name="product">
+        <description>Product description (type, price, etc.)</description>
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="Product" collection="false" name="product"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_0_ii" name="product" typeRef="Product"/>
+    </inputData>
+    <decision id="node_1" name="Final offer">
+        <description>This is the final offer that may combine a discount and a coupon.</description>
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="Product" collection="false" name="product"/>
+                <input bomType="Customer" collection="false" name="customer"/>
+                <input bomType="Offer" collection="false" name="product promotion"/>
+                <input bomType="Offer" collection="false" name="loyalty promotion"/>
+                <output bomType="Offer" collection="false" name="Final offer"/>
+                <rule defaultRule="false" href="node_1/Standard%20offer.drl" kind="BusinessRule" name="Standard offer"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_1_ii" name="Final offer" typeRef="Offer"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_2"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_3"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_5"/>
+        </informationRequirement>
+    </decision>
+    <inputData id="node_2" name="customer">
+        <description>Customer details, such as age, status, etc.</description>
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="Customer" collection="false" name="customer"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_2_ii" name="customer" typeRef="Customer"/>
+    </inputData>
+    <decision id="node_3" name="product promotion">
+        <description>This decision outputs a promotional offer based on the promotions that are available at the moment. Promotions depend the type of product, the price, etc.</description>
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="Product" collection="false" name="product"/>
+                <output bomType="Offer" collection="false" name="product promotion"/>
+                <rule defaultRule="false" href="node_3/promotion%20table.dmt" kind="DecisionTable" name="promotion table"/>
+                <rule defaultRule="true" href="node_3/output-default-setting.drl" kind="BusinessRule" name="output-default-setting"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_3_ii" name="product promotion" typeRef="Offer"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+    </decision>
+    <decision id="node_5" name="loyalty promotion">
+        <description>This decision outputs a promotional offer based on customer information.</description>
+        <extensionElements>
+            <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="Product" collection="false" name="product"/>
+                <input bomType="Customer" collection="false" name="customer"/>
+                <output bomType="Offer" collection="false" name="loyalty promotion"/>
+                <rule defaultRule="true" href="node_5/output-default-setting.drl" kind="BusinessRule" name="output-default-setting"/>
+                <rule defaultRule="false" href="node_5/Gold%20Status.drl" kind="BusinessRule" name="Gold Status"/>
+            </ruleset>
+        </extensionElements>
+        <variable id="node_5_ii" name="loyalty promotion" typeRef="Offer"/>
+        <informationRequirement>
+            <requiredInput href="#node_0"/>
+        </informationRequirement>
+        <informationRequirement>
+            <requiredInput href="#node_2"/>
+        </informationRequirement>
+    </decision>
+</definitions></definition>
+</com.ibm.rules.studio.model.decisionmodel:DecisionModel>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>output-default-setting</name>
+  <uuid>4a1b0658-0478-4c2c-af6d-a4efaad3a893</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[set decision to a new offer where
+        the coupon is "", 
+        the discount is 0 ;]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

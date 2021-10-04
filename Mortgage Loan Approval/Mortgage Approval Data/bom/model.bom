@@ -1,60 +1,182 @@
 
 
-public class CreditRating
-        property "ads.typeId" "5"
-        property "com.fasterxml.jackson.annotation.JsonTypeName" "Credit Rating"
+public class ApplicantFinancialRisk
+        extends java.lang.Enum
+        property "ads.typeId" "9"
+        property "com.fasterxml.jackson.annotation.JsonTypeName" "Applicant Financial Risk"
         property "de.generated" "true"
 {
-    public string applicantCreditRating
+    domain {static highFinancialRisk, static lowFinancialRisk, static mediumFinancialRisk}
+    public static final readonly ApplicantFinancialRisk highFinancialRisk
                 property "ads.attributeId" "1"
-                property "com.fasterxml.jackson.annotation.JsonProperty" "Applicant Credit Rating"
-                property update "true";
-    public string newAttribute
+                property "com.fasterxml.jackson.annotation.JsonProperty" "High Financial Risk";
+    public static final readonly ApplicantFinancialRisk lowFinancialRisk
+                property "ads.attributeId" "3"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Low Financial Risk";
+    public static final readonly ApplicantFinancialRisk mediumFinancialRisk
                 property "ads.attributeId" "2"
-                property "com.fasterxml.jackson.annotation.JsonProperty" "new attribute"
-                property update "true";
-    public CreditRating(string applicantCreditRating, string newAttribute)
-                property autoExpand "true"
-                property beanConstructor "true"
-                property groups "BALA"
-                property prototype "true";
-    public CreditRating()
-                property "dataio.default" "true";
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Medium Financial Risk";
 }
 
-public class EmployerReference
-        property "ads.typeId" "4"
-        property "com.fasterxml.jackson.annotation.JsonTypeName" "Employer Reference"
+public class AppliedMortgageValue
+        extends java.lang.Enum
+        property "ads.typeId" "11"
+        property "com.fasterxml.jackson.annotation.JsonTypeName" "Applied Mortgage Value"
         property "de.generated" "true"
 {
-    public string employmentStatus
-                property "ads.attributeId" "1"
-                property "com.fasterxml.jackson.annotation.JsonProperty" "Employment Status"
-                property update "true";
-    public EmployerReference(string employmentStatus)
-                property autoExpand "true"
-                property beanConstructor "true"
-                property groups "BALA"
-                property prototype "true";
-    public EmployerReference()
-                property "dataio.default" "true";
+    domain {static highMortgageValue, static lowMortgageValue, static mediumMortgageValue}
+    public static final readonly AppliedMortgageValue highMortgageValue
+                property "ads.attributeId" "2"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "High Mortgage Value";
+    public static final readonly AppliedMortgageValue lowMortgageValue
+                property "ads.attributeId" "4"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Low Mortgage Value";
+    public static final readonly AppliedMortgageValue mediumMortgageValue
+                property "ads.attributeId" "3"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Medium Mortgage Value";
 }
 
-public class PropertySurvey
-        property "ads.typeId" "1"
-        property "com.fasterxml.jackson.annotation.JsonTypeName" "Property Survey"
+public class CreditScore
+        extends java.lang.Enum
+        property "ads.typeId" "6"
+        property "com.fasterxml.jackson.annotation.JsonTypeName" "Credit Score"
         property "de.generated" "true"
 {
-    public string propertyValue
+    domain {static OKCreditScore, static badCreditScore, static goodCreditScore}
+    public static final readonly CreditScore OKCreditScore
+                property "ads.attributeId" "2"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "OK Credit Score";
+    public static final readonly CreditScore badCreditScore
+                property "ads.attributeId" "3"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Bad Credit Score";
+    public static final readonly CreditScore goodCreditScore
                 property "ads.attributeId" "1"
-                property "com.fasterxml.jackson.annotation.JsonProperty" "Property Value"
-                property update "true";
-    public PropertySurvey(string propertyValue)
-                property autoExpand "true"
-                property beanConstructor "true"
-                property groups "BALA"
-                property prototype "true";
-    public PropertySurvey()
-                property "dataio.default" "true";
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Good Credit Score";
+}
+
+public class EmploymentContract
+        extends java.lang.Enum
+        property "ads.typeId" "8"
+        property "com.fasterxml.jackson.annotation.JsonTypeName" "Employment Contract"
+        property "de.generated" "true"
+{
+    domain {static contractEmployment, static noEmployment, static temporaryEmployment}
+    public static final readonly EmploymentContract contractEmployment
+                property "ads.attributeId" "1"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Contract Employment";
+    public static final readonly EmploymentContract noEmployment
+                property "ads.attributeId" "3"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "No Employment";
+    public static final readonly EmploymentContract temporaryEmployment
+                property "ads.attributeId" "2"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Temporary Employment";
+}
+
+public class FreeIncomePerMonth
+        extends java.lang.Enum
+        property "ads.typeId" "7"
+        property "com.fasterxml.jackson.annotation.JsonTypeName" "Free Income Per Month"
+        property "de.generated" "true"
+{
+    domain {static highFreeIncome, static lowFreeIncome, static mediumFreeIncome}
+    public static final readonly FreeIncomePerMonth highFreeIncome
+                property "ads.attributeId" "2"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "High Free Income";
+    public static final readonly FreeIncomePerMonth lowFreeIncome
+                property "ads.attributeId" "1"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Low Free Income";
+    public static final readonly FreeIncomePerMonth mediumFreeIncome
+                property "ads.attributeId" "3"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Medium Free Income";
+}
+
+public class MortgageApproval
+        extends java.lang.Enum
+        property "ads.typeId" "15"
+        property "com.fasterxml.jackson.annotation.JsonTypeName" "Mortgage Approval"
+        property "de.generated" "true"
+{
+    domain {static approved, static declined}
+    public static final readonly MortgageApproval approved
+                property "ads.attributeId" "1"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Approved";
+    public static final readonly MortgageApproval declined
+                property "ads.attributeId" "2"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Declined";
+}
+
+public class MortgageBusinessAppetite
+        extends java.lang.Enum
+        property "ads.typeId" "14"
+        property "com.fasterxml.jackson.annotation.JsonTypeName" "Mortgage Business Appetite"
+        property "de.generated" "true"
+{
+    domain {static highDemand, static lowDemand, static mediumDemand}
+    public static final readonly MortgageBusinessAppetite highDemand
+                property "ads.attributeId" "2"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "High Demand";
+    public static final readonly MortgageBusinessAppetite lowDemand
+                property "ads.attributeId" "4"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Low Demand";
+    public static final readonly MortgageBusinessAppetite mediumDemand
+                property "ads.attributeId" "3"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Medium Demand";
+}
+
+public class MortgageOffer
+        extends java.lang.Enum
+        property "ads.typeId" "13"
+        property "com.fasterxml.jackson.annotation.JsonTypeName" "Mortgage Offer"
+        property "de.generated" "true"
+{
+    domain {static cheapMortgage, static expensiveMortgage, static mediumMortgage, static noMortgage}
+    public static final readonly MortgageOffer cheapMortgage
+                property "ads.attributeId" "2"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Cheap Mortgage";
+    public static final readonly MortgageOffer expensiveMortgage
+                property "ads.attributeId" "4"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Expensive Mortgage";
+    public static final readonly MortgageOffer mediumMortgage
+                property "ads.attributeId" "3"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Medium Mortgage";
+    public static final readonly MortgageOffer noMortgage
+                property "ads.attributeId" "1"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "No Mortgage";
+}
+
+public class MortgageRisk
+        extends java.lang.Enum
+        property "ads.typeId" "12"
+        property "com.fasterxml.jackson.annotation.JsonTypeName" "Mortgage Risk"
+        property "de.generated" "true"
+{
+    domain {static highMortgageRisk, static lowMortgageRisk, static mediumMortgageRisk}
+    public static final readonly MortgageRisk highMortgageRisk
+                property "ads.attributeId" "1"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "High Mortgage Risk";
+    public static final readonly MortgageRisk lowMortgageRisk
+                property "ads.attributeId" "3"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Low Mortgage Risk";
+    public static final readonly MortgageRisk mediumMortgageRisk
+                property "ads.attributeId" "2"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Medium Mortgage Risk";
+}
+
+public class PropertyValue
+        extends java.lang.Enum
+        property "ads.typeId" "10"
+        property "com.fasterxml.jackson.annotation.JsonTypeName" "Property Value"
+        property "de.generated" "true"
+{
+    domain {static highPropertyValue, static lowPropertyValue, static mediumPropertyValue}
+    public static final readonly PropertyValue highPropertyValue
+                property "ads.attributeId" "1"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "High Property Value";
+    public static final readonly PropertyValue lowPropertyValue
+                property "ads.attributeId" "3"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Low Property Value";
+    public static final readonly PropertyValue mediumPropertyValue
+                property "ads.attributeId" "2"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Medium Property Value";
 }
 

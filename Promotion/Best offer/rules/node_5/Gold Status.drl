@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>Gold Status</name>
+  <uuid>f3a0021f-4d7e-4d2b-b90a-c92e7422fc0d</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[if
+	the status of customer is "gold"
+then
+	add 0.05 to the discount of decision ; ]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

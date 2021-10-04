@@ -10,22 +10,22 @@
     <inputData id="node_0" name="Credit Score">
         <extensionElements>
             <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
-                <output bomType="java.lang.String" collection="false" name="Credit Score"/>
+                <output bomType="CreditScore" collection="false" name="Credit Score"/>
             </initialization>
         </extensionElements>
-        <variable id="node_0_ii" name="Credit Score" typeRef="java.lang.String"/>
+        <variable id="node_0_ii" name="Credit Score" typeRef="CreditScore"/>
     </inputData>
     <decision id="node_1" name="Determine Applicant Financial Risk">
         <extensionElements>
             <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
-                <input bomType="java.lang.String" collection="false" name="Credit Score"/>
-                <input bomType="java.lang.String" collection="false" name="Free Income Per Month vs Total Income"/>
-                <input bomType="java.lang.String" collection="false" name="Employment Contract"/>
-                <output bomType="java.lang.String" collection="false" name="Determine Applicant Financial Risk"/>
-                <rule defaultRule="false" href="node_1/Determine%20Applicant%20Financial%20Risk.dmt" kind="DecisionTable" name="Determine Applicant Financial Risk"/>
+                <input bomType="CreditScore" collection="false" name="Credit Score"/>
+                <input bomType="FreeIncomePerMonth" collection="false" name="Free Income Per Month"/>
+                <input bomType="EmploymentContract" collection="false" name="Employment Contract"/>
+                <output bomType="ApplicantFinancialRisk" collection="false" name="Determine Applicant Financial Risk"/>
+                <rule defaultRule="false" href="node_1/Applicant%20Financial%20Risk.dmt" kind="DecisionTable" name="Applicant Financial Risk"/>
             </ruleset>
         </extensionElements>
-        <variable id="node_1_ii" name="Determine Applicant Financial Risk" typeRef="java.lang.String"/>
+        <variable id="node_1_ii" name="Determine Applicant Financial Risk" typeRef="ApplicantFinancialRisk"/>
         <informationRequirement>
             <requiredInput href="#node_0"/>
         </informationRequirement>
@@ -39,13 +39,13 @@
     <decision id="node_4" name="Determine Mortgage Risk">
         <extensionElements>
             <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
-                <input bomType="java.lang.String" collection="false" name="Applied Mortgage Value"/>
-                <input bomType="java.lang.String" collection="false" name="Property Value"/>
-                <output bomType="java.lang.String" collection="false" name="Determine Mortgage Risk"/>
-                <rule defaultRule="false" href="node_4/Determine%20Mortgage%20Risk.dmt" kind="DecisionTable" name="Determine Mortgage Risk"/>
+                <input bomType="AppliedMortgageValue" collection="false" name="Applied Mortgage Value"/>
+                <input bomType="PropertyValue" collection="false" name="Property Value"/>
+                <output bomType="MortgageRisk" collection="false" name="Determine Mortgage Risk"/>
+                <rule defaultRule="false" href="node_4/Mortgage%20Risk%20.dmt" kind="DecisionTable" name="Mortgage Risk "/>
             </ruleset>
         </extensionElements>
-        <variable id="node_4_ii" name="Determine Mortgage Risk" typeRef="java.lang.String"/>
+        <variable id="node_4_ii" name="Determine Mortgage Risk" typeRef="MortgageRisk"/>
         <informationRequirement>
             <requiredInput href="#node_12"/>
         </informationRequirement>
@@ -56,13 +56,13 @@
     <decision id="node_7" name="Determine Mortgage Offer">
         <extensionElements>
             <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
-                <input bomType="java.lang.String" collection="false" name="Determine Applicant Financial Risk"/>
-                <input bomType="java.lang.String" collection="false" name="Determine Mortgage Risk"/>
-                <output bomType="java.lang.String" collection="false" name="Determine Mortgage Offer"/>
-                <rule defaultRule="false" href="node_7/Determine%20mortgage%20offer.dmt" kind="DecisionTable" name="Determine mortgage offer"/>
+                <input bomType="ApplicantFinancialRisk" collection="false" name="Determine Applicant Financial Risk"/>
+                <input bomType="MortgageRisk" collection="false" name="Determine Mortgage Risk"/>
+                <output bomType="MortgageOffer" collection="false" name="Mortgage Offer"/>
+                <rule defaultRule="false" href="node_7/Mortgage%20Offer.dmt" kind="DecisionTable" name="Mortgage Offer"/>
             </ruleset>
         </extensionElements>
-        <variable id="node_7_ii" name="Determine Mortgage Offer" typeRef="java.lang.String"/>
+        <variable id="node_7_ii" name="Determine Mortgage Offer" typeRef="MortgageOffer"/>
         <informationRequirement>
             <requiredInput href="#node_1"/>
         </informationRequirement>
@@ -73,13 +73,13 @@
     <decision id="node_8" name="Approve Applicant Mortgage Application">
         <extensionElements>
             <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
-                <input bomType="java.lang.String" collection="false" name="Determine Mortgage Offer"/>
-                <input bomType="java.lang.String" collection="false" name="Mortgage Business Appetite"/>
-                <output bomType="java.lang.String" collection="false" name="Approve Applicant Mortgage Application"/>
-                <rule defaultRule="false" href="node_8/Approve%20applicant%20mortgage%20application.dmt" kind="DecisionTable" name="Approve applicant mortgage application"/>
+                <input bomType="MortgageOffer" collection="false" name="Mortgage Offer"/>
+                <input bomType="MortgageBusinessAppetite" collection="false" name="Mortgage Business Appetite"/>
+                <output bomType="MortgageApproval" collection="false" name="Approve Applicant Mortgage Application"/>
+                <rule defaultRule="false" href="node_8/Business%20Mortgage%20Approval%20.dmt" kind="DecisionTable" name="Business Mortgage Approval "/>
             </ruleset>
         </extensionElements>
-        <variable id="node_8_ii" name="Approve Applicant Mortgage Application" typeRef="java.lang.String"/>
+        <variable id="node_8_ii" name="Approve Applicant Mortgage Application" typeRef="MortgageApproval"/>
         <informationRequirement>
             <requiredInput href="#node_7"/>
         </informationRequirement>
@@ -90,42 +90,42 @@
     <inputData id="node_9" name="Mortgage Business Appetite">
         <extensionElements>
             <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
-                <output bomType="java.lang.String" collection="false" name="Mortgage Business Appetite"/>
+                <output bomType="MortgageBusinessAppetite" collection="false" name="Mortgage Business Appetite"/>
             </initialization>
         </extensionElements>
-        <variable id="node_9_ii" name="Mortgage Business Appetite" typeRef="java.lang.String"/>
+        <variable id="node_9_ii" name="Mortgage Business Appetite" typeRef="MortgageBusinessAppetite"/>
     </inputData>
     <inputData id="node_10" name="Property Value">
         <extensionElements>
             <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
-                <output bomType="java.lang.String" collection="false" name="Property Value"/>
+                <output bomType="PropertyValue" collection="false" name="Property Value"/>
             </initialization>
         </extensionElements>
-        <variable id="node_10_ii" name="Property Value" typeRef="java.lang.String"/>
+        <variable id="node_10_ii" name="Property Value" typeRef="PropertyValue"/>
     </inputData>
     <inputData id="node_11" name="Employment Contract">
         <extensionElements>
             <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
-                <output bomType="java.lang.String" collection="false" name="Employment Contract"/>
+                <output bomType="EmploymentContract" collection="false" name="Employment Contract"/>
             </initialization>
         </extensionElements>
-        <variable id="node_11_ii" name="Employment Contract" typeRef="java.lang.String"/>
+        <variable id="node_11_ii" name="Employment Contract" typeRef="EmploymentContract"/>
     </inputData>
     <inputData id="node_12" name="Applied Mortgage Value">
         <extensionElements>
             <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
-                <output bomType="java.lang.String" collection="false" name="Applied Mortgage Value"/>
+                <output bomType="AppliedMortgageValue" collection="false" name="Applied Mortgage Value"/>
             </initialization>
         </extensionElements>
-        <variable id="node_12_ii" name="Applied Mortgage Value" typeRef="java.lang.String"/>
+        <variable id="node_12_ii" name="Applied Mortgage Value" typeRef="AppliedMortgageValue"/>
     </inputData>
-    <inputData id="node_13" name="Free Income Per Month vs Total Income">
+    <inputData id="node_13" name="Free Income Per Month">
         <extensionElements>
             <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
-                <output bomType="java.lang.String" collection="false" name="Free Income Per Month vs Total Income"/>
+                <output bomType="FreeIncomePerMonth" collection="false" name="Free Income Per Month"/>
             </initialization>
         </extensionElements>
-        <variable id="node_13_ii" name="Free Income Per Month vs Total Income" typeRef="java.lang.String"/>
+        <variable id="node_13_ii" name="Free Income Per Month" typeRef="FreeIncomePerMonth"/>
     </inputData>
 </definitions></definition>
 </com.ibm.rules.studio.model.decisionmodel:DecisionModel>

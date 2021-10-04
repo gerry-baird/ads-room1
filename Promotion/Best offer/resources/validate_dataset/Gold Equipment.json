@@ -1,0 +1,13 @@
+{
+  "product": {
+    "name": "Hedge Trimmer",
+    "price": 250,
+    "type": "equipment"
+  },
+  "customer": {
+    "age": 45,
+    "name": "Peter",
+    "status": "gold",
+    "spending": 120
+  }
+}

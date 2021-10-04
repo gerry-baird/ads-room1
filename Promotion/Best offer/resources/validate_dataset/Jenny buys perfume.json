@@ -1,0 +1,13 @@
+{
+  "product": {
+    "name": "Perfume",
+    "price": 190,
+    "type": "cosmetics"
+  },
+  "customer": {
+    "age": 35,
+    "name": "Jenny",
+    "status": "silver",
+    "spending": 1538
+  }
+}
