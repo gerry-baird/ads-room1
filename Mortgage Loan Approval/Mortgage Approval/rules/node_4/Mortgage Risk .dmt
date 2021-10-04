@@ -25,7 +25,7 @@
             <ActionDefinitions>
                 <ActionDefinition Id="A0">
                     <ExpressionDefinition>
-                        <Text><![CDATA[set decision to <a Mortgage Risk> ]]></Text>
+                        <Text><![CDATA[set 'decision' to <a Mortgage Risk>]]></Text>
                     </ExpressionDefinition>
                 </ActionDefinition>
             </ActionDefinitions>
@@ -163,17 +163,21 @@
                 </Condition>
                 <Condition>
                     <Expression/>
-                    <ActionSet/>
+                    <ActionSet>
+                        <Action DefId="A0">
+                            <Expression/>
+                        </Action>
+                    </ActionSet>
                 </Condition>
             </Partition>
         </Contents>
     </Body>
     <Resources DefaultLocale="en_US">
         <ResourceSet Locale="en_US">
+            <Data Name="Definitions(A0)#HeaderText"><![CDATA[Determine Mortgage Risk]]></Data>
+            <Data Name="Definitions(A0)[0]#HeaderText"><![CDATA[a string]]></Data>
             <Data Name="Definitions(C0)#HeaderText"><![CDATA[Applied Mortgage Value]]></Data>
             <Data Name="Definitions(C1)#HeaderText"><![CDATA[Property Value]]></Data>
-            <Data Name="Definitions(A0)[0]#HeaderText"><![CDATA[a string]]></Data>
-            <Data Name="Definitions(A0)#HeaderText"><![CDATA[Determine Mortgage Risk]]></Data>
         </ResourceSet>
     </Resources>
 </DT></definition>
