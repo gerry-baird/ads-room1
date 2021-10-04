@@ -45,6 +45,7 @@
                 <output bomType="MortgageRisk" collection="false" name="Determine Mortgage Risk"/>
                 <rule defaultRule="false" href="node_4/Mortgage%20Risk%20.dmt" kind="DecisionTable" name="Mortgage Risk "/>
                 <rule defaultRule="false" href="node_4/Dummy%20Rule.drl" kind="BusinessRule" name="Dummy Rule"/>
+                <rule defaultRule="false" href="node_4/Another%20Dummy%20Rule.drl" kind="BusinessRule" name="Another Dummy Rule"/>
             </ruleset>
         </extensionElements>
         <variable id="node_4_ii" name="Determine Mortgage Risk" typeRef="MortgageRisk"/>
@@ -82,7 +83,6 @@
                 <input bomType="MortgageBusinessAppetite" collection="false" name="Mortgage Business Appetite"/>
                 <output bomType="MortgageApproval" collection="false" name="Approve Applicant Mortgage Application"/>
                 <rule defaultRule="false" href="node_8/Business%20Mortgage%20Approval%20.dmt" kind="DecisionTable" name="Business Mortgage Approval "/>
-                <rule defaultRule="false" href="node_8/Dummy%20%20From%20Other%20User.drl" kind="BusinessRule" name="Dummy  From Other User"/>
             </ruleset>
         </extensionElements>
         <variable id="node_8_ii" name="Approve Applicant Mortgage Application" typeRef="MortgageApproval"/>
