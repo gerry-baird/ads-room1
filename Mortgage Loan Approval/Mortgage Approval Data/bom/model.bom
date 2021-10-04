@@ -1,0 +1,60 @@
+
+
+public class CreditRating
+        property "ads.typeId" "5"
+        property "com.fasterxml.jackson.annotation.JsonTypeName" "Credit Rating"
+        property "de.generated" "true"
+{
+    public string applicantCreditRating
+                property "ads.attributeId" "1"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Applicant Credit Rating"
+                property update "true";
+    public string newAttribute
+                property "ads.attributeId" "2"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "new attribute"
+                property update "true";
+    public CreditRating(string applicantCreditRating, string newAttribute)
+                property autoExpand "true"
+                property beanConstructor "true"
+                property groups "BALA"
+                property prototype "true";
+    public CreditRating()
+                property "dataio.default" "true";
+}
+
+public class EmployerReference
+        property "ads.typeId" "4"
+        property "com.fasterxml.jackson.annotation.JsonTypeName" "Employer Reference"
+        property "de.generated" "true"
+{
+    public string employmentStatus
+                property "ads.attributeId" "1"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Employment Status"
+                property update "true";
+    public EmployerReference(string employmentStatus)
+                property autoExpand "true"
+                property beanConstructor "true"
+                property groups "BALA"
+                property prototype "true";
+    public EmployerReference()
+                property "dataio.default" "true";
+}
+
+public class PropertySurvey
+        property "ads.typeId" "1"
+        property "com.fasterxml.jackson.annotation.JsonTypeName" "Property Survey"
+        property "de.generated" "true"
+{
+    public string propertyValue
+                property "ads.attributeId" "1"
+                property "com.fasterxml.jackson.annotation.JsonProperty" "Property Value"
+                property update "true";
+    public PropertySurvey(string propertyValue)
+                property autoExpand "true"
+                property beanConstructor "true"
+                property groups "BALA"
+                property prototype "true";
+    public PropertySurvey()
+                property "dataio.default" "true";
+}
+

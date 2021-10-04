@@ -1,0 +1,21 @@
+
+# CreditRating
+CreditRating#concept.label = Credit Rating
+CreditRating.CreditRating(java.lang.String,java.lang.String)#phrase.navigation = a new {Credit Rating} where {0, Applicant Credit Rating} {1, new attribute}
+CreditRating.applicantCreditRating#phrase.action = set the Applicant Credit Rating of {this} to {Applicant Credit Rating}
+CreditRating.applicantCreditRating#phrase.navigation = {Applicant Credit Rating} of {this}
+CreditRating.newAttribute#phrase.action = set the new attribute of {this} to {new attribute}
+CreditRating.newAttribute#phrase.navigation = {new attribute} of {this}
+
+# EmployerReference
+EmployerReference#concept.label = Employer Reference
+EmployerReference.EmployerReference(java.lang.String)#phrase.navigation = a new {Employer Reference} where {0, Employment Status}
+EmployerReference.employmentStatus#phrase.action = set the Employment Status of {this} to {Employment Status}
+EmployerReference.employmentStatus#phrase.navigation = {Employment Status} of {this}
+
+# PropertySurvey
+PropertySurvey#concept.documentation = 
+PropertySurvey#concept.label = Property Survey
+PropertySurvey.PropertySurvey(java.lang.String)#phrase.navigation = a new {Property Survey} where {0, Property Value}
+PropertySurvey.propertyValue#phrase.action = set the Property Value of {this} to {Property Value}
+PropertySurvey.propertyValue#phrase.navigation = {Property Value} of {this}
