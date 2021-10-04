@@ -39,6 +39,7 @@
     <decision id="node_4" name="Determine Mortgage Risk">
         <extensionElements>
             <ruleset xmlns="http://www.ibm.com/spec/ODM/dmn.xsd" conflictResolution="sequence">
+                <input bomType="java.lang.String" collection="false" name="Some New Node"/>
                 <input bomType="AppliedMortgageValue" collection="false" name="Applied Mortgage Value"/>
                 <input bomType="PropertyValue" collection="false" name="Property Value"/>
                 <output bomType="MortgageRisk" collection="false" name="Determine Mortgage Risk"/>
@@ -47,6 +48,9 @@
             </ruleset>
         </extensionElements>
         <variable id="node_4_ii" name="Determine Mortgage Risk" typeRef="MortgageRisk"/>
+        <informationRequirement>
+            <requiredInput href="#node_14"/>
+        </informationRequirement>
         <informationRequirement>
             <requiredInput href="#node_12"/>
         </informationRequirement>
@@ -127,6 +131,14 @@
             </initialization>
         </extensionElements>
         <variable id="node_13_ii" name="Free Income Per Month" typeRef="FreeIncomePerMonth"/>
+    </inputData>
+    <inputData id="node_14" name="Some New Node">
+        <extensionElements>
+            <initialization xmlns="http://www.ibm.com/spec/ODM/dmn.xsd">
+                <output bomType="java.lang.String" collection="false" name="Some New Node"/>
+            </initialization>
+        </extensionElements>
+        <variable id="node_14_ii" name="Some New Node" typeRef="java.lang.String"/>
     </inputData>
 </definitions></definition>
 </com.ibm.rules.studio.model.decisionmodel:DecisionModel>
