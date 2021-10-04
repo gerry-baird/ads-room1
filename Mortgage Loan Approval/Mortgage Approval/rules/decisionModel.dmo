@@ -43,6 +43,7 @@
                 <input bomType="PropertyValue" collection="false" name="Property Value"/>
                 <output bomType="MortgageRisk" collection="false" name="Determine Mortgage Risk"/>
                 <rule defaultRule="false" href="node_4/Mortgage%20Risk%20.dmt" kind="DecisionTable" name="Mortgage Risk "/>
+                <rule defaultRule="false" href="node_4/Dummy%20Rule.drl" kind="BusinessRule" name="Dummy Rule"/>
             </ruleset>
         </extensionElements>
         <variable id="node_4_ii" name="Determine Mortgage Risk" typeRef="MortgageRisk"/>
