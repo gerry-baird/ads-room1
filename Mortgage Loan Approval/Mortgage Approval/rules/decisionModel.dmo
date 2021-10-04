@@ -44,6 +44,8 @@
                 <output bomType="MortgageRisk" collection="false" name="Determine Mortgage Risk"/>
                 <rule defaultRule="false" href="node_4/Mortgage%20Risk%20.dmt" kind="DecisionTable" name="Mortgage Risk "/>
                 <rule defaultRule="false" href="node_4/Dummy%20Rule.drl" kind="BusinessRule" name="Dummy Rule"/>
+                <rule defaultRule="false" href="node_4/ADS04%20Dummy%20Rule.drl" kind="BusinessRule" name="ADS04 Dummy Rule"/>
+                <rule defaultRule="false" href="node_4/ADS08%20Dummy%20Rule.drl" kind="BusinessRule" name="ADS08 Dummy Rule"/>
             </ruleset>
         </extensionElements>
         <variable id="node_4_ii" name="Determine Mortgage Risk" typeRef="MortgageRisk"/>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>ADS04 Dummy Rule</name>
+  <uuid>f9caebd8-efbd-4f11-ad1d-8e219e337314</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[if false then set decision to null ; ]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>
