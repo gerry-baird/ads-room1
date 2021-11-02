@@ -109,7 +109,7 @@
                                     <ActionSet>
                                         <Action DefId="A0">
                                             <Expression>
-                                                <Param><![CDATA[High Financial Risk]]></Param>
+                                                <Param><![CDATA[Medium Financial Risk]]></Param>
                                             </Expression>
                                         </Action>
                                     </ActionSet>

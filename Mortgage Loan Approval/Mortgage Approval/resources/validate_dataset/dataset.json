@@ -1,8 +1,8 @@
 {
-  "creditScore": "Bad Credit Score",
-  "mortgageBusinessAppetite": "Low Demand",
+  "creditScore": "OK Credit Score",
+  "mortgageBusinessAppetite": "Medium Demand",
   "propertyValue": "Medium Property Value",
-  "employmentContract": "Temporary Employment",
+  "employmentContract": "Contract Employment",
   "appliedMortgageValue": "Medium Mortgage Value",
   "freeIncomePerMonth": "Low Free Income"
 }
